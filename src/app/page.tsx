@@ -1,5 +1,6 @@
 "use client";
 import Head from "next/head";
+
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -7,8 +8,13 @@ export default function Home() {
   const banners = ["/banner/intro-main2_1.jpg", "/banner/intro-main2_2.jpg"];
   const [isLoginPopupVisible, setLoginPopupVisible] = useState(false);
   const [isRegisterPopupVisible, setRegisterPopupVisible] = useState(false);
+
   const handleAlert = () => {
     alert("아이디를 입력하세요");
+  };
+
+  const onBack = () => {
+    window.location.href = "/";
   };
   const toggleLoginPopup = () => {
     setLoginPopupVisible(!isLoginPopupVisible);
@@ -32,9 +38,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center h-auto p-4 w-full lg:w-auto">
+
+            <div
+              onClick={onBack}
+              className="flex items-center h-auto p-4 w-full lg:w-auto "
+            >
               <img
-                className="h-8 w-auto md:h-10 lg:h-12 mx-auto"
+                className="h-8 w-auto md:h-10 lg:h-12 mx-auto cursor-pointer"
                 src="/logo/logo.png"
                 alt="MixMix"
               />
@@ -146,21 +156,21 @@ export default function Home() {
         className="bg-gray-200 shadow-inner font-custom  "
         style={{ fontWeight: 700 }}
       >
-    {/* Buttons for small screens */}
-    <div className="block lg:hidden mb-4 flex flex-row w-full">
-    <button
-      className="flex-1 flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer  text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]"
-      onClick={toggleLoginPopup}
-    >
-      로그인
-    </button>
-    <button
-      className="flex-1 flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer  text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]"
-      onClick={toggleRegisterPopup}
-    >
-      회원가입
-    </button>
-  </div>
+        {/* Buttons for small screens */}
+        <div className="block lg:hidden mb-4 flex flex-row w-full">
+          <button
+            className="flex-1 flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer  text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]"
+            onClick={toggleLoginPopup}
+          >
+            로그인
+          </button>
+          <button
+            className="flex-1 flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer  text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]"
+            onClick={toggleRegisterPopup}
+          >
+            회원가입
+          </button>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:block hidden">
           <nav className="flex justify-center space-x-4 h-12 items-center text-gray-700 ">
             <a href="#" className="hover:underline">
@@ -448,6 +458,61 @@ export default function Home() {
               alt="Banner"
             />
           </a>
+
+          {/* Button Grid Section */}
+          <div className="block lg:hidden grid grid-cols-3 gap-2">
+            {/* Top Row */}
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">💳</span> 충전
+            </div>
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">🔄</span> 환전
+            </div>
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">🎧</span> 고객센터
+            </div>
+            {/* Bottom Row */}
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">💰</span> 충금액
+            </div>
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">🔄</span> 충횟수
+            </div>
+            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+              <span className="mr-2">💸</span> 페이백
+            </div>
+
+            {/* Yellow Buttons - Hidden on Large Screens */}
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              충전
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              환전
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              고객센터
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              충금액
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              충횟수
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              페이백
+            </button>
+
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              페이백
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              페이백
+            </button>
+            <button className="bg-yellow-500 text-black py-4 rounded-lg lg:hidden">
+              페이백
+            </button>
+         
+          </div>
 
           {/* New Sections Below the Banner */}
           <div className="space-y-4">
