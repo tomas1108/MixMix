@@ -1,6 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import DepositView from '@/containers/deposit';
-
+import WithdrawView from '@/containers/withdrawal';
 import { NextPage } from 'next';
 
 
@@ -9,7 +8,7 @@ interface Props {}
 const Page: NextPage<Props> = ({}) => {
   return (
     <Layout>
-       <DepositView />
+       <WithdrawView />
     </Layout>
   )
 };

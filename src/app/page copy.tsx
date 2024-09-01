@@ -1,6 +1,6 @@
 "use client";
-import Head from "next/head";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
   const [isRegisterPopupVisible, setRegisterPopupVisible] = useState(false);
   const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const router = useRouter();
 
   const handleAlert = () => {
     alert("아이디를 입력하세요");
@@ -34,6 +35,11 @@ export default function Home() {
     setIsRightSidebarOpen(!isRightSidebarOpen);
   };
 
+  const handleNavigation = (path: string) => {
+    
+    router.push(path);
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
@@ -52,14 +58,16 @@ export default function Home() {
             <div
               className="flex items-center h-auto p-4 w-full lg:w-auto "
             >
-              <button className="lg:hidden" onClick={toggleLeftSidebar}>-</button>
+              <button className="lg:hidden" onClick={toggleLeftSidebar}>
+              <img src='/icons/list.svg' alt="Button Icon" />
+              </button>
               <img
                 className="h-8 w-auto md:h-10 lg:h-12 mx-auto cursor-pointer"
                 src="/logo/logo.png"
                 alt="MixMix"
                 onClick={onBack}
               />
-              <button className="lg:hidden" onClick={toggleRightSidebar}> 0</button>
+              <button className="lg:hidden" onClick={toggleRightSidebar}>1</button>
             </div>
             {/* Navigation */}
             <nav
@@ -460,9 +468,12 @@ export default function Home() {
           {/* Button Grid Section */}
           <div className="block lg:hidden grid grid-cols-3 gap-2">
             {/* Top Row */}
-            <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
-              <span className="mr-2">💳</span> 충전
-            </div>
+           <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
+  <button onClick={() => handleNavigation("/deposit")}>
+    <span className="mr-2">💳</span> 충전
+  </button>
+</div>
+
             <div className="flex items-center justify-center border border-[#eb8691] bg-[#c94c5a] rounded-sm mx-1 py-3 cursor-pointer text-base text-white font-[aTitleGothic, 'Malgun Gothic', sans-serif]">
               <span className="mr-2">🔄</span> 환전
             </div>

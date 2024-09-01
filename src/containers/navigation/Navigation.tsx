@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 interface NavigationBarProps {
   toggleLoginPopup: () => void;
@@ -9,6 +10,38 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
   toggleLoginPopup,
   toggleRegisterPopup
 }) => {
+  const router = useRouter(); // Initialize useRouter
+
+  // Define paths corresponding to each navigation item
+  const paths: { [key: string]: string } = {
+    '스포츠(해외형)': '',
+    '스포츠(국내형)': '',
+    '스포츠(스페셜)': '',
+    '스포츠(실시간)': '', 
+    '미니게임': '',
+    '벳365': '/bet365',
+    '토큰게임': '',
+    '카지노': '/casino',
+    '슬롯': '/slots',
+    '레볼루션(홀덤)': '/warning',
+  };
+
+  // Function to handle navigation or alert
+  const handleNavigation = (item: string) => {
+    const path = paths[item];
+    if (path === '/warning') {
+      alert('레볼루션(홀덤) 페이지는 준비 중입니다.'); // Show alert if path is '/warning'
+    }
+    else if (path) {
+      router.push(path); // Navigate to path if it exists
+
+
+
+    } else {
+      alert('Coming Soon'); // Show alert if path doesn't exist
+    }
+  };
+
   return (
     <div
       className="bg-gray-200 shadow-inner font-custom"
@@ -45,13 +78,13 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
             '슬롯',
             '레볼루션(홀덤)',
           ].map((item) => (
-            <a
+            <button
               key={item}
-              href="#"
-              className="hover:underline"
+              onClick={() => handleNavigation(item)} // Handle click event
+              className="hover:underline cursor-pointer"
             >
               {item}
-            </a>
+            </button>
           ))}
         </nav>
       </div>

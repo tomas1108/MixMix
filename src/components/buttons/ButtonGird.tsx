@@ -5,13 +5,19 @@ const ButtonGrid = () => (
   <div className="block lg:hidden grid grid-cols-3 gap-2">
     {/* Top Row */}
     <div className={BUTTON_CLASS}>
+      <a href="/deposit">
       <span className="mr-2">💳</span> 충전
+        </a>
     </div>
     <div className={BUTTON_CLASS}>
+      <a href="/withdrawal">
       <span className="mr-2">🔄</span> 환전
+        </a>
     </div>
     <div className={BUTTON_CLASS}>
+      <a href="/qna">
       <span className="mr-2">🎧</span> 고객센터
+        </a>
     </div>
     {/* Bottom Row */}
     <div className={BUTTON_CLASS}>

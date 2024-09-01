@@ -23,7 +23,22 @@ const _IMAGE_URL = {
       { src: '/banner/bner-mid-sma3.jpg', alt: 'Item 3' },
       { src: '/banner/bner-mid-sma4.jpg', alt: 'Item 4' },
       { src: '/banner/bner-mid-sma5.jpg', alt: 'Item 5' },
-    ]
+    ],
+    img_event: [
+      "/image/eve1.jpg",
+      "/image/eve2.jpg",
+      "/image/eve3.jpeg",
+      "/image/eve4.jpeg",
+      "/image/eve5.jpg",
+      "/image/eve6.jpg",
+      "/image/eve7.jpeg",
+      "/image/eve8.jpg",
+      "/image/eve9.jpeg",
+      "/image/eve10.jpeg",
+      "/image/eve11.jpg",
+      "/image/eve12.jpeg",
+      "/image/eve13.jpg",      
+    ],
   };
   
   export { _IMAGE_URL };

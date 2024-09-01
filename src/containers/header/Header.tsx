@@ -30,14 +30,19 @@ const Header: React.FC<HeaderProps> = ({
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center h-auto p-4 w-full lg:w-auto">
-            <button className="lg:hidden" onClick={toggleLeftSidebar}>-</button>
+            <button className="lg:hidden" onClick={toggleLeftSidebar}>
+            <img src='/icons/list.svg' alt="Button Icon" />
+            </button>
             <img
               className="h-8 w-auto md:h-10 lg:h-12 mx-auto cursor-pointer"
               src="/logo/logo.png"
               alt="MixMix"
               onClick={onBack}
             />
-            <button className="lg:hidden" onClick={toggleRightSidebar}>0</button>
+            <button className="lg:hidden" onClick={toggleRightSidebar}>
+            <img src='/icons/logout.png' alt="Log Button" className='w-12 mb-4'/>
+
+            </button>
           </div>
 
           {/* Navigation */}
@@ -51,12 +56,12 @@ const Header: React.FC<HeaderProps> = ({
           >
             {[
               { text: '충전', path: '/deposit' },
-              { text: '환전', path: '/exchange' },
-              { text: '페이백', path: '/payback' },
-              { text: '충횟수', path: '/charge-count' },
-              { text: '충금액', path: '/charge-amount' },
-              { text: '포인트', path: '/points' },
-              { text: '고객센터', path: '/support' },
+              { text: '환전', path: '/withdrawal' },
+              { text: '페이백', path: '/' },
+              { text: '충횟수', path: '/' },
+              { text: '충금액', path: '/' },
+              { text: '포인트', path: '/myPoint' },
+              { text: '고객센터', path: '/qna' },
               { text: '쪽지', path: '/messages' },
               { text: '베팅내역', path: '/bet-history' },
               { text: '이벤트', path: '/events' },
@@ -67,6 +72,7 @@ const Header: React.FC<HeaderProps> = ({
                 href="#"
                 className="text-gray-700 font-semibold hover:text-orange-500"
                 onClick={() => handleNavigation(path)}
+
               >
                 {text}
               </a>

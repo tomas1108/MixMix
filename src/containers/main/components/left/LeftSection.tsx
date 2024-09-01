@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, MenuButton, ImageLink, SportsItem } from  '@/components';
+import Link from 'next/link';
 interface LeftSectionProps {
   isLeftSidebarOpen: boolean;
  
@@ -19,8 +20,12 @@ const LeftSection: React.FC<LeftSectionProps> = ({ isLeftSidebarOpen }) => {
       <div>
         {/* Top Buttons */}
         <div className="custom-bg grid grid-cols-4 gap-0 rounded-t-lg">
+          <Link href="/deposit">
           <Button text="충전" className="rounded-tl-lg bg-pink-600" />
-          <Button text="한전" className="bg-pink-600" />
+          </Link>
+          <Link href="/withdrawal">
+          <Button text="환전" className="bg-pink-600" />
+          </Link>
           <Button text="고객센터" className="bg-pink-600" />
           <Button text="쪽지함" className="rounded-tr-lg bg-pink-600" />
         </div>
