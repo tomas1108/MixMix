@@ -1,0 +1,660 @@
+<html lang="ko"><head></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <!-- 
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    -->
+    
+    <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>믹스믹스</title>
+	    
+		
+		 
+    <link rel="stylesheet" href="resources/release/css/app76ebaofb.min.css">
+	<script type="text/javascript" src="resources/release/js/lib.min.js"></script>
+	<script type="text/javascript" src="resources/release/js/templates76ebaofb.min.js"></script> 
+	<script type="text/javascript" src="resources/release/js/app76ebaofb.min.js"></script> 
+		
+	
+	<script type="text/javascript">
+		window.runningPath = 'release' ;
+		function resizeTopIframe(dynheight) {  
+	        document.getElementById("game-frame").style.height = parseInt(dynheight) + 50 + 'px';  
+	    }
+	</script>
+	<link rel="shortcut icon" href="resources/release/img/logo_72.png">
+	<link rel="apple-touch-icon" href="resources/release/img/logo_180.png">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .html {
+    font-size: 10px;
+    color: #000;
+    font-weight: 400;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: aTitleGothic, "Malgun Gothic", san-serif;
+}
+.InfoBox-wrap {
+    background: #fff;
+}
+.InfoBox {
+    display: flex;
+    height: 55px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+.InfoBox>.col {
+    white-space: nowrap;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    padding: 6px 0 6px 15px;
+    cursor: pointer;
+    height: 50px;
+    width: 230px;
+}
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 0 0;
+}
+
+.scrollNotice-copy {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: #f1a140;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 6px 10px;
+    background: #ddd;
+    border-radius: 60px;
+}
+
+[class*=" icon-"], [class^=icon-] {
+    font-family: party !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+#quickAnnounce-copy {
+    overflow: hidden;
+    position: relative;
+    width: 320px;
+    color: #000;
+    font-weight: 500;
+}
+#quickAnnounce-copy p {
+    margin: 0;
+    padding-left: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-animation-name: marquee;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: marquee;
+    -moz-animation-timing-function: linear;
+    -moz-animation-duration: 20s;
+    -moz-animation-iteration-count: infinite;
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.InfoBox>.col.right {
+    text-align: right;
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
+}
+
+.InfoBox>.col {
+    white-space: nowrap;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.InfoBox .col.right>span {
+    position: relative;
+    cursor: pointer;
+    margin: 0 7px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+    </style>
+</head>
+<body style="cursor: auto;">
+	<div id="header" class="intro_layout"><div><div class="InfoBox-wrap">
+	
+
+	<div class="InfoBox">
+		
+		<div class="col left">
+			<div id="logo" class="logo"><img src="resources/release/img/logo.png"></div>
+			<div class="scrollNotice-copy">
+			   <span class="icon-bell"></span>
+			   <span class="normalText1" id="quickAnnounce-copy">
+			        <p id="scrollNotice"></p>
+			   </span>
+			</div>   
+		</div>   
+		<div class="col right">
+			<span class="userInfo" id="deposit"><i class="icon-deposit"></i><abbr>충전</abbr></span>
+			<span class="userInfo" id="withdrawal"><i class="icon-withdrawal"></i><abbr>환전</abbr></span>
+			<span class="userInfo nolink" id="btnPayBack"><i class="icon-cash1"></i><abbr>페이백</abbr></span>
+			<span class="userInfo nolink" id="btnDepositBonus"><i class="icon-bonus"></i><abbr>충횟수</abbr></span>
+			<span class="userInfo nolink" id="btnDepositBonus2"><i class="icon-bonus2"></i><abbr>충금액</abbr></span>
+			<span class="userInfo" id="myPoint"><i class="icon-point"></i><abbr>포인트</abbr></span>
+			<i class="divide"></i>
+			<span class="userInfo" id="qna"><i class="icon-qna"></i><abbr>고객센터</abbr></span>
+			<span class="userInfo" id="message"><i class="icon-memo"></i><abbr>쪽지</abbr></span>
+			<span class="userInfo" id="mybet"><i class="icon-mybet"></i><abbr>베팅내역</abbr></span>
+			<i class="divide"></i>
+			<span class="userInfo" id="eventNotice"><i class="icon-eventNotice"></i><abbr>이벤트</abbr></span>
+			<span class="userInfo" id="bbs"><i class="icon-bullhorn"></i><abbr>공지사항</abbr></span>			
+			<span class="btnLogin nolink" data-id="login">로그인</span>
+			<span class="btnLogin nolink" data-id="sign">회원가입</span>
+		</div>
+	 </div>
+</div>
+<div class="mLoginBtnCont">
+	<div class="btn" data-id="login"><span><i class="icon-enter"></i> 로그인</span></div>
+	<div class="btn" data-id="sign"><span><i class="icon-id"></i> 회원가입</span></div>
+</div>
+<div class="TopMenu">
+	<ul class="main-menu-box1">
+	    <li class="mMenu">
+	    	<div class="main sport" id="sport">
+	    		<span></span>
+	    		<em>스포츠(해외형)</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main sport" id="sportmain">
+	    		<span></span>
+	    		<em>스포츠(국내형)</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main sport" id="sportspecial">
+	    		<span></span>
+	    		<em>스포츠(스페셜)</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main live" id="live">
+	    		<span></span>
+	    		<em>스포츠(실시간)</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main games" id="games">
+	    		<span></span>
+	    		<em>미니게임</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main bet365" id="games/4/11">
+	    		<span></span>
+	    		<em>벳365</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main token" id="tokenGame">
+	    		<span></span>
+	    		<em>토큰게임</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main casino" id="casino">
+	    		<span></span>
+	    		<em>카지노</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main slot" id="slot">
+	    		<span></span>
+	    		<em>슬롯</em>
+	    	</div>
+	    </li>
+	    <li class="mMenu">
+	    	<div class="main revolution" id="revolution">
+	    		<span></span>
+	    		<em>레볼루션(홀덤)</em>
+	    	</div>
+	    </li>
+	 </ul>
+	
+</div>
+
+
+<div id="btnLeftWrap" class="icon-menu"></div>
+<div id="btnRefresh" class="icon-spinner11"></div>
+<div id="btnRightWrap">
+		<i class="icon-power"></i>
+</div>
+
+<div class="opaque" style="display: none;"></div></div></div>
+	<div id="mainWrap" class="intro_layout">		
+		<div class="leftWrap scroll" data-simplebar="init" style="height: calc(-113px + 100vh); max-height: 545px;"><div class="simplebar-wrapper" style="margin: 0px -5px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 5px 0px 0px;">
+			<div id="additional_menu"><div><div class="addMenu-wrap inv">
+	<i data-id="deposit" class="inv"><i class="icon-deposit"></i>충전</i>
+	<i data-id="withdrawal" class="inv"><i class="icon-withdrawal"></i>환전</i>
+	<i data-id="qna" class="inv"><i class="icon-qna"></i>고객센터</i>
+	<i data-id="message" class="inv"><i class="icon-memo"></i>쪽지함</i>
+</div>
+<div class="addMenu-wrap">
+	<i data-id="sport">스포츠(해외형)</i>
+	<i data-id="sportmain">스포츠(국내형)</i>
+	<i data-id="sportspecial">스포츠(스페셜)</i>
+
+	<i data-id="live">스포츠(실시간)</i>
+	<i data-id="games">미니게임</i>
+	<i data-id="tokenGame">토큰게임</i>
+
+	<i data-id="casino">카지노</i>
+	<i data-id="slot">슬롯</i>
+	<i data-id="revolution">레볼루션(홀덤)</i>
+	
+	<i data-id="games/4/11">BET365</i>
+	<i data-id="bbs">공지사항</i>
+	<i data-id="eventNotice">이벤트</i>
+	
+	<i data-id="event">출석부</i>
+	<i data-id="roulette">쿠폰</i>
+	<i data-id="mybet">베팅내역</i>
+	
+	<i data-id="myPoint">포인트전환</i>
+	<i data-id="recommender">지인현황</i>
+	<i data-id="modInfo">정보수정</i>
+</div>
+<div class="snb-btn">
+	<div data-id="casino" class="casino-btn"></div>
+	<div data-id="slot" class="slot-btn"></div>
+</div>
+<div class="snb-btn b">
+	<div data-id="revolution" class="revolution-btn"></div>
+</div>
+<div class="addMenu-search">
+	<div><input type="text" name="search-sport" id="search-sport" value="" placeholder="스포츠 해외형 검색 (국가/리그/팀명)"><button id="btnSearchSport"><span class="icon-search"></span></button></div>
+	<div><input type="text" name="search-sportMain" id="search-sportMain" value="" placeholder="스포츠 국내형 검색 (국가/리그/팀명)"><button id="btnSearchSportMain"><span class="icon-search"></span></button></div>
+</div>
+
+</div></div>
+			<div id="leftContent"><div class="leftMenu">
+<div class="menuWrap1">
+	<div class="menuTabCont">
+		<div class="menuTab on" id="menuSport">스포츠<span id="preMatchCount">581</span></div>
+		<div class="menuTab" id="menuLive">실시간  <span id="liveMatchCount">5</span></div>
+		<div class="menuTab" id="menuGames">미니게임</div>
+	</div>
+	<div class="menuContent"><div class="SportMenuContainer"><div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport1"></span> 축구</span><span>410 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport3"></span> 야구</span><span>22 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport2"></span> 농구</span><span>27 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport23"></span> 배구</span><span>15 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport5"></span> 테니스</span><span>34 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport6"></span> 핸드볼</span><span>26 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport4"></span> 아이스하키</span><span>32 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div><div class="sMenu"><div id="sportsMatchCount"><span><span class="icon-sport16"></span> 미식축구</span><span>15 <span class="icon-arrow-down"></span></span></div>
+<div class="col" id="categoryList" style="display:none;"><div></div></div></div></div><!-- <div data-id="result" class="etcMenu"><span class="icon-result"></span> 경기결과</div> -->
+
+
+
+<div class="popular">
+	<div class="title"><i class="icon-pt-new"></i>인기리그</div>
+	<div class="itemList" id="hotLeagueList">
+		<!-- 
+		-->
+	<div class="item leagueItem"><span class="icon-league-1000000067"></span>잉글랜드 프리미어리그 축구</div><div class="item leagueItem"><span class="icon-league-1000004146"></span>일본 NPB 야구</div><div class="item leagueItem"><span class="icon-league-1000000183"></span>미국 MLB 야구</div><div class="item leagueItem"><span class="icon-league-1000000065"></span>독일 분데스리가 축구</div><div class="item leagueItem"><span class="icon-league-1000000004"></span>이탈리아 세리에 A 축구</div><div class="item leagueItem"><span class="icon-league-1000008363"></span>스페인 라 리가 축구</div><div class="item leagueItem"><span class="icon-league-1000000061"></span>프랑스 리그 1 축구</div><div class="item leagueItem"><span class="icon-league-1000032659"></span>독일 분데스리가 핸드볼</div></div>
+</div></div></div>
+</div>
+<div class="menuWrap2" style="display:none">
+	<div class="userInfo"><div class="leftMenuUserInfo">	<input type="text" id="userIdLeft" placeholder="User ID"> 
+	<input type="password" id="passwordLeft" placeholder="Password">
+	<button type="button" value="로그인" class="btn_login" id="btnLoginLeft"><span class="icon-enter"></span> 로그인</button>
+	<button type="button" value="회원가입" class="btn_login" id="btnSignLeft">회원가입</button>
+</div></div>
+	<div class="menuContent2"></div>
+</div>
+<div id="btnCloseLeftWrap"><span class="icon-close"></span></div></div></div>
+		</div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 1253px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 25px; display: block; transform: translate3d(0px, 0px, 0px);"></div></div></div>
+		<div class="centerWrap" style="height: calc(-113px + 100vh); max-height: 545px;">
+			<div id="content" class="contentWrap"><div class="Intro"><div class="forScrollWrap scroll" data-simplebar="init" style="height: calc(-113px + 100vh); max-height: 545px;"><div class="simplebar-wrapper" style="margin: 0px -6px -30px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 6px 30px 0px;">
+	<div class="intro-mainWrap">
+		<div class="intro-mainCont" id="intro-mainImg">
+			<div style="left: 0px;">
+				
+				
+			<i class="mbanner c1"></i><i class="mbanner c2"></i></div>
+		</div>
+		<div id="mobile_intro">
+		
+			<div class="wrap btngroup1">
+				<div class="" data-id="deposit"><i class="icon-deposit"></i>충전</div>
+				<div class="" data-id="withdrawal"><i class="icon-withdrawal"></i>환전</div>
+				<div class="" data-id="qna"><i class="icon-qna"></i>고객센터</div>
+				<div class="nolink" id="btnIntroDepositBonus2"><i class="icon-bonus2"></i>충금액</div>
+				<div class="nolink" id="btnIntroDepositBonus"><i class="icon-bonus"></i>충횟수</div>
+				<div class="nolink" id="btnIntroPayBack"><i class="icon-cash1"></i>페이백</div>
+			</div>
+		
+			<div class="wrap btngroup2">
+				<div class="sport" data-id="sport"><i class="icon-sport1"></i>스포츠(해외형)</div>
+				<div class="sport" data-id="sportmain"><i class="icon-sportMain"></i>스포츠(국내형)</div>
+				<div class="sport" data-id="sportspecial"><i class="icon-b365_soccer_superleague"></i>스포츠(스페셜)</div>
+				<div class="live" data-id="live"><i class="icon-live4"></i>스포츠(실시간)</div>
+				<div class="games" data-id="games"><i class="icon-jjang_ladder"></i>미니게임</div>
+				<div class="token" data-id="tokenGame"><i class="icon-tokengame"></i>토큰게임</div>
+				<div class="casino" data-id="casino"><i class="icon-lotus_oe"></i>카지노</div>
+				<div class="slot" data-id="slot"><i class="icon-slot-street"></i>슬롯</div>
+				<div class="revolution" data-id="revolution"><i class="icon-lotus_oe"></i>레볼루션(홀덤)</div>
+			</div>
+			
+		</div>
+		
+		<div class="intro-subCont">
+			<div class="intro-bbsCont">
+				<div class="grid">
+					<div class="col">
+						<div>
+							<div class="title">
+								<span><i>공지사항</i><i class="en"></i></span>
+								<span class="LinkBtn" data-id="bbs"><i class="icon-plus"></i><i>MORE</i></span>
+							</div>
+							<ul>
+								<li class="notice" id="1"><p><span style="color:#FCC205">▶ 악질 신고 유저&nbsp;</span><span style="color:#FF5166">강력 대응 ◀ </span></p> </li>
+					            <li class="notice" id="2"><p><span style="color:#FCC205">▶ 레볼루션&nbsp;</span><span style="color:#FF5166">홀덤 규정 ◀ </span></p> </li>
+					            <li class="notice" id="3"><p><span style="color:#FCC205">▶ 레볼루션&nbsp;</span><span style="color:#FF5166">홀덤 가이드 ◀ </span></p> </li>
+					            <li class="notice" id="4"><p><span style="color:#FCC205">▶ 레벨별&nbsp;</span><span style="color:#FF5166">등급혜택 ◀ </span></p> </li>
+					            <li class="notice" id="5"><p><span style="color:#FCC205">▶ 미니게임&nbsp;</span><span style="color:#FF5166">규정안내 ◀</span></p></li>
+							</ul>
+						</div>
+					
+					</div>
+					<div class="col">
+						<div>
+							<div class="title">
+								<span><i>이벤트</i><i class="en"></i></span>
+								<span class="LinkBtn" data-id="eventNotice"><i class="icon-plus"></i><i>MORE</i></span>
+							</div>
+							<ul>
+								<li class="eventNotice" id="1"><p><span style="color:#FCC205">《레볼루션 홀덤&nbsp;</span><span style="color:#FF5166">더블이벤트》</span></p></li>
+					            <li class="eventNotice" id="2"><p><span style="color:#FCC205">《 무한 입금 플러스&nbsp;</span><span style="color:#FF5166">이벤트 》</span></p></li>
+					            <li class="eventNotice" id="3"><p><span style="color:#FCC205">《 신규회원&nbsp;</span><span style="color:#FF5166">이벤트 》</span></p></li>
+					            <li class="eventNotice" id="4"><p><span style="color:#FCC205">《 개인정산&nbsp;</span><span style="color:#FF5166">이벤트 》</span></p></li>
+					            <li class="eventNotice" id="5"><p><span style="color:#FCC205">《 슬롯 충전&nbsp;</span><span style="color:#FF5166">이벤트 》</span></p></li>
+							</ul>
+						</div>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="intro-linkCont">
+				<div class="grid Link">
+					<div class="col sport" data-id="sport"></div>
+					<div class="col live" data-id="live"></div>
+					<div class="col games" data-id="games"></div>
+					<div class="col slot" data-id="slot"></div>
+					<div class="col casino" data-id="casino"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 834px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 37px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+</div></div>
+	    	<div id="casinoContent" style="display:none;"></div>
+	    	<div id="islogin" style="display: none;"><div class="isLoginContainer"><div class="isLoginBox">
+	<div class="isLoginWrap">
+		<div class="title">로그인 후 이용하실 수 있습니다.</div>
+		<div class="btnCont">
+			<div class="btn" data-id="login">로그인</div> 
+			<div class="btn" data-id="sign">회원가입</div>
+		</div>
+	
+	</div>
+
+</div>
+</div></div>
+		</div>
+		<div class="rightWrap scroll" data-simplebar="init" style="height: calc(-113px + 100vh); max-height: 545px;"><div class="simplebar-wrapper" style="margin: 0px -6px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 6px 0px 0px;">
+			<div id="user_info"><div class="user-info">
+<div class="myInfo-wrap">
+	<div class="myInfo">
+	<div class="loginBox">
+		<!-- <div><i class="icon-id"></i> 회원로그인</div> -->
+    	<div><input type="text" id="login_userId" class="txt_signup" placeholder="아이디"></div> 
+		<div><input type="password" id="login_password" class="txt_signup" placeholder="비밀번호"> </div>
+		<div class="btnCont before">
+			<div class="btn_login" id="btnLogin"><span class="icon-power"></span> 로그인</div> 
+			<div class="btn_login" id="btnSign">회원가입</div>
+		</div>
+	</div>
+	
+</div>
+
+</div></div></div>
+    		<div id="cart" class="intro"><div class="banner"><!-- <div id="mobile_lk" class="btngroup3">
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+					<i class="offilk flash"></i>
+				</a>
+				<a href="https://www.nba.com/" target="_blank">
+					<i class="offilk nba"></i>
+				</a>
+				<a href="https://www.premierleague.com/" target="_blank">
+					<i class="offilk premier"></i>
+				</a>
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+					<i class="offilk nba"></i>
+				</a>
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+					<i class="offilk premier"></i>
+				</a>
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+				 	<i class="offilk flash"></i>
+				</a>
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+				 	<i class="offilk nba"></i>
+				</a>
+				<a href="https://www.flashscore.co.kr/" target="_blank">
+				 	<i class="offilk premier"></i>
+				</a>
+</div> -->
+<div data-link="http://믹스믹스.com" class="r_banner rbanner1"></div>
+<div data-link="http://qr.kakao.com/talk/c8Tkdeyy8fmj8HUilX2VhwuZn9o-" class="r_banner rbanner2"></div>
+<div data-link="https://t.me/mixmix365" class="r_banner rbanner3"></div>
+<div data-link="https://t.me/mixmix_Channel" class="r_banner rbanner4"></div>
+<div data-link="https://bigwin.livenst.com/mixmix/livescore/livescore/" class="r_banner rbanner5"></div>
+<div data-link="https://www.rotowire.com/" class="r_banner rbanner6"></div>
+</div></div>
+    	</div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 846px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 37px; display: block; transform: translate3d(0px, 0px, 0px);"></div></div></div>
+   	</div>
+    <div class="liveTVContainter"></div>
+   	<div id="footer" class=""><div>	<div class="footerCont" style="display: none;">
+		<div class="wrap">
+			<div class="left">
+				<div class="">믹스믹스  © Copyright All rights reserved.</div>
+			</div>
+			<div class="right">
+					
+			</div>
+		</div>
+	</div>
+
+	
+	<div id="btnFooter"><span class="icon-arrow-up"></span><span class="icon-arrow-down"></span></div></div></div>
+   	
+   	
+   	<div id="goTop" class="intro"><div id="top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i><br>TOP</div></div>
+   	<div id="popup"><div class="PopupNoticeContainer"><div class="PopupNoticeList"><div class="PopupNotice"><div id="eventDetail" class="eventDetail ui-draggable ui-draggable-handle" style="left: 1524px; top: 100px; width: calc(374px); height: calc(570px); position: relative;">
+    <div class="cont">
+    	<img src="resources/release/img/notice/solo pay.jpg">
+        <div class="info"><input type="checkbox" id="checkPopup"> 오늘 이창을 다시 열지 않기 <button type="button" class="btnClose" id="btnClose">닫기</button></div>
+    </div>
+</div></div></div></div></div>
+
+	<div id="sign"><div class="signContainer" style="display: none;"><div class="formWrap">
+   	<form>
+   	<input type="text" name="new-user-preventAutofill" style="display: block; width:0px; height:0px; border: 0;padding:0;">
+   	<input type="password" name="new-password-preventAutofill" style="display: block; width:0px; height:0px; border: 0;padding:0;">
+   		<div>
+	   		<div class="title">믹스믹스 회원가입</div>
+	   		<div class="colWrap">
+	    		<div class="col">
+	                <div><label for="userId">아이디</label><input type="text" class="must" placeholder="4~12자 영문, 숫자를 입력해주세요" id="userId" alert="아이디를"> <button type="button" id="btnCheckId">중복체크</button></div>
+	                <div><label for="name">닉네임</label><input type="text" class="must" placeholder="3~8자 한글, 숫자 닉네임을 입력해주세요." id="name" alert="닉네임을"> <button type="button" id="btnCheckName">중복체크</button></div>
+	                <div><label for="password">비밀번호</label><input type="password" class="must" placeholder="타사이트와 같은 암호를 사용하지 말아주세요" id="password" alert="비밀번호를"></div>
+	                <div><label for="rePassword">비밀번호확인</label><input type="password" id="rePassword" class="must" alert="비밀번호 확인을" placeholder="다시 한번 비밀번호를 입력해주세요."></div>
+					<div class="code"><label for="tel1">휴대폰번호</label><select class="tel must" id="tel1" alert="휴대폰번호를">
+		                    <option value="010">010</option>
+		                    <option value="010">011</option>
+		                    <option value="016">016</option>
+		                    <option value="017">017</option>
+		                    <option value="018">018</option>
+		                    <option value="019">019</option>
+		                </select>-<input type="text" id="tel2" class="tel must" maxlength="4" alert="휴대폰번호를">-<input type="text" id="tel3" class="tel must" maxlength="4" alert="휴대폰번호를">
+			            <button type="button" id="btnSendCode">인증받기</button>
+	            	</div>
+               		<div><label for="authCode">인증번호</label>
+              			<input type="text" class="must" id="authCode" alert="인증번호를">
+           			</div>
+	           	</div>
+	           	<div class="col">
+	                <div><label for="bankName">은행명</label><select class="bank must" id="bankName" alert="은행명을">
+	                    <option value="">은행선택</option>
+	                    <option value="농협은행">농협은행</option>
+	                    <option value="국민은행">국민은행</option>
+	                    <option value="기업은행">기업은행</option>
+	                    <option value="하나은행">하나은행</option>
+	                    <option value="신한은행">신한은행</option>
+	                    <option value="우리은행">우리은행</option>
+	                    <option value="산업은행">산업은행</option>
+	                    <option value="카카오뱅크">카카오뱅크</option>
+	                    <option value="토스뱅크">토스뱅크</option>
+	                    <option value="저축은행">저축은행</option>
+	                    <option value="신협">신협</option>
+	                    <option value="새마을금고">새마을금고</option>
+	                    <option value="우체국">우체국</option>
+	                    <option value="수협은행">수협은행</option>
+						<option value="경남은행">경남은행</option>
+						<option value="부산은행">부산은행</option>
+						<option value="대구은행">대구은행</option>
+						<option value="전북은행">전북은행</option>
+						<option value="광주은행">광주은행</option>
+						<option value="제주은행">제주은행</option>
+						<option value="SC제일은행">SC제일은행</option>
+						<option value="한국씨티은행">한국씨티은행</option>
+						<option value="도이치은행">도이치은행</option>
+						<option value="케이뱅크">케이뱅크</option>
+						<option value="하이투자증권">하이투자증권</option>
+						<option value="우리투자증권">우리투자증권</option>
+						<option value="대우증권">대우증권</option>
+						<option value="현대증권">현대증권</option>
+						<option value="jp모간">jp모간</option>
+						<option value="한국투자증권">한국투자증권</option>
+						<option value="키움증권">키움증권</option>
+						<option value="BOA은행">BOA은행</option>
+						<option value="모건스탠리">모건스탠리</option>
+						<option value="KB증권">KB증권</option>
+						<option value="LIG투자증권">LIG투자증권</option>
+						<option value="부국증권">부국증권</option>
+						<option value="신한금융투자">신한금융투자</option>
+						<option value="한화투자증권">한화투자증권</option>
+						<option value="대신증권">대신증권</option>
+						<option value="교보증권">교보증권</option>
+						<option value="삼성증권">삼성증권</option>
+						<option value="미래에셋증권">미래에셋증권</option>
+						<option value="동양증권">동양증권</option>
+						<option value="bnp파리바">bnp파리바</option>
+						<option value="HMC투자증권">HMC투자증권</option>
+						<option value="산림조합">산림조합</option>
+						<option value="SK증권">SK증권</option>
+						<option value="미쓰비시도쿄UFJ은행">미쓰비시도쿄UFJ은행</option>
+						<option value="카카오페이증권">카카오페이증권</option>
+						<option value="NH농협투자증권">NH농협투자증권</option>
+						<option value="신영증권">신영증권</option>
+						<option value="메리츠증권">메리츠증권</option>
+						<option value="하나대부증권">하나대부증권</option>
+						<option value="이트레이드증권">이트레이드증권</option>
+	                </select>
+	               	</div>
+	                <div><label for="bankAccountNumber">계좌번호</label><input type="text" class="must" placeholder="- 를 제외하고 숫자만 입력하세요" id="bankAccountNumber" alert="계좌번호를"></div>
+	                <div><label for="bankAccountName">예금주</label><input type="text" class="must" id="bankAccountName" alert="예금주를" placeholder="계좌 예금주를 입력해주세요."></div>
+	                <div><label for="accountPassword">충환전 비밀번호</label><input type="password" class="must" id="accountPassword" alert="충환전 비밀번호를"></div>
+	                <div><label for="reAccountPassword">충환전 비밀번호 확인</label><input type="password" class="must" id="reAccountPassword" alert="충환전 비밀번호 확인을"></div>
+	                <div><label for="recommender">가입코드 <span>※가입코드가 없으시면 비워두세요</span></label><input type="text" class="must" id="recommender" alert="가입코드를" placeholder="영문, 숫자를 입력해주세요."></div>
+	            </div>
+	         </div>
+		    <div class="btnCont">	            
+	            <button type="button" id="btnConfirm" class="btnBig">가입하기</button>
+	        </div>
+	       
+       	</div>
+       	<div id="btnCloseSign"><i class="icon-del2"></i></div>
+   	</form>
+ </div></div><div class="loginContainer" style="display: none;"><div class="wrap1">
+	<div class="wrap2">
+		<div class="box">
+				<div class="title">믹스믹스 회원로그인</div>
+				<div class="col">
+			    	<div><input type="text" id="pop_userId" class="txt_signup" placeholder="아이디"></div> 
+					<div><input type="password" id="pop_password" class="txt_signup" placeholder="비밀번호"> </div>
+					<div class="btnCont">
+						<div class="btn_login" id="btnPopLogin"><span class="icon-power"></span> 로그인</div>
+						<div class="btn_login" data-id="sign">회원가입</div>
+						<div class="btn_login" data-id="telegram"><span class="icon-telegram"></span> 텔레그램 문의</div>
+					</div>
+				</div>
+		</div>
+		<div id="btnCloseLogin"><i class="icon-del2"></i></div>
+	</div>
+</div></div></div>
+	<div class="loaderAllBg" style="display: none;"><div class="loaderAll"></div></div>
+	
+	<script>
+	
+		var isMobile = false; 
+		if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+		    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+		    isMobile = true;
+		}
+		if (!isMobile) {
+			$('.scroll').each(function(index, el) {
+			    new SimpleBar(el);
+			});
+		}
+	
+	</script>
+
+
+</body></html>

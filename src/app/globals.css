@@ -116,3 +116,25 @@ html, body {
   animation: fadeIn 0.3s ease-out;
 }
 
+
+
+.sport-category {
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  margin: 0px auto 4px;
+  border-radius: 3px;
+  padding: 4px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(68, 88, 173);
+  border-image: initial;
+}
+* {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  font-family: aTitleGothic, "Malgun Gothic", san-serif;
+}
+
